@@ -13,7 +13,7 @@ import re
 # ------------------------------------------
 
 # Target YorkU Health Page
-base_url = "https://www.yorku.ca/health/experiential-education-2/"
+base_url = "https://www.yorku.ca/health/academic-advising/"
 
 # Define fills based on visual system
 domain_styles = [
@@ -101,7 +101,11 @@ for a in main.find_all("a", href=True):
     font = default_font
 
     # Category: PDF or form
-    if full_url.lower().endswith((".pdf", ".doc", ".docx")) or "/forms/" in full_url.lower():
+    if (
+            full_url.lower().endswith((".pdf", ".doc", ".docx"))
+            or "/forms/" in full_url.lower()
+            or full_url.startswith("https://health.apps01.yorku.ca")
+    ):
         fill = pdf_form_fill
     else:
         matched = False
