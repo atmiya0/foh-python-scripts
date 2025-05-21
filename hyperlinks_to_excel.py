@@ -13,7 +13,7 @@ import re
 # ------------------------------------------
 
 # Target YorkU Health Page
-base_url = "https://www.yorku.ca/health/academic-honesty-3/"
+base_url = "https://www.yorku.ca/health/experiential-education-2/"
 
 # Define fills based on visual system
 domain_styles = [
